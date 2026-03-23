@@ -1,1 +1,0 @@
-# eks-gitops-helm-deployment
