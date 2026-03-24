@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: List content
         run: ls -a
