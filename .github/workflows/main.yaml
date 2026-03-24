@@ -26,11 +26,14 @@ jobs:
         run: ls -a
       - name: Build Image
         id: ecr-publish
-        uses: bitovi/github-actions-ecr-publish@v0.1.0
+        uses: appleboy/docker-ecr-action@master
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_default_region: ${{ env.AWS_REGION }}
-          aws_ecr_repo_name: ${{ env.ECR_REPOSITORY }}
-          image_tag: ${{ github.run_number }}
-          dockerfile_path: web
+          access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          registry: ${{ secrets.REGISTRY }}
+          repo: ${{ env.ECR_REPOSITORY }}
+          region: ${{ env.AWS_REGION }}
+          tag: ${{ github.run_number }}
+          daemon_off: false
+          dockerfile: web/Dockerfile
+          context: web
