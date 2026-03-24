@@ -33,4 +33,4 @@ jobs:
           aws_default_region: ${{ env.AWS_REGION }}
           aws_ecr_repo_name: ${{ env.ECR_REPOSITORY }}
           image_tag: ${{ github.run_number }}
-          dockerfile_path: ./web/Dockerfile
+          dockerfile_path: ./web
