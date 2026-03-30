@@ -82,7 +82,7 @@ jobs:
             --set image.tag=$IMAGE_TAG
 
       - name: Deploy from main branch
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           IMAGE_REPO=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ env.ECR_REPOSITORY }}
           IMAGE_TAG=${{ github.run_number }}
