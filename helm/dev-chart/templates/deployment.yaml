@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: html-gitops-eks
-          image: 716920920468.dkr.ecr.us-east-1.amazonaws.com/html-gitops-eks:latest
+          image: 716920920468.dkr.ecr.us-east-1.amazonaws.com/html-gitops-eks:15
           ports:
             - containerPort: 80
           resources:
